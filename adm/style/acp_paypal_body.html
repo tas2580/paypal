@@ -1,0 +1,30 @@
+<!-- INCLUDE overall_header.html -->
+<h1>{L_ACP_PAYPAL_TITLE}</h1>
+
+<form method="post" action="{U_ACTION}" enctype="multipart/form-data">
+<fieldset>
+	<legend>{L_ACP_SETTINGS}</legend>
+	<dl>
+		<dt><label for="paypal_email">{L_ACP_PAYPAL_EMAIL}</label><br /><span>{L_ACP_PAYPAL_EMAIL_EXPLAIN}</span></dt>
+		<dd><input type="text" id="paypal_email" name="paypal_email" size="40" maxlength="255" value="{PAYPAL_EMAIL}" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="paypal_default_item">{L_ACP_PAYPAL_DEFAULT_ITEM}</label><br /><span>{L_ACP_PAYPAL_DEFAULT_ITEM_EXPLAIN}</span></dt>
+		<dd><input type="text" id="paypal_default_item" name="paypal_default_item" size="40" maxlength="255" value="{PAYPAL_DEFAULT_ITEM}" /></dd>
+	</dl>
+	<dl>
+		<dt><label for="paypal_description">{L_ACP_PAYPAL_DESCRIPTION}</label><br /><span>{L_ACP_PAYPAL_DESCRIPTION_EXPLAIN}</span></dt>
+		<dd><textarea id="paypal_description" rows="10" cols="50" name="paypal_description">{PAYPAL_DESCRIPTION}</textarea></dd>
+	</dl>
+</fieldset>
+
+<fieldset>
+	<legend>{L_ACP_SUBMIT}</legend>
+	<p class="submit-buttons">
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+	</p>
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->

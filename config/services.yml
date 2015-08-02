@@ -1,0 +1,16 @@
+services:
+    tas2580.paypal.main:
+        class: tas2580\paypal\controller\main
+        arguments:
+            - @config
+            - @controller.helper
+            - @template
+            - @user
+    tas2580.paypal.listener:
+        class: tas2580\paypal\event\listener
+        arguments:
+            - @controller.helper
+            - @template
+            - @user
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,32 @@
+{
+	"name": "tas2580/paypal",
+	"type": "phpbb-extension",
+	"description": "Adds a page to donate with Paypal",
+	"homepage": "https://tas2580.net",
+	"version": "0.1.0",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "tas2580",
+			"email": "mail@tas2580.net",
+			"homepage": "https://tas2580.net",
+			"role": "Developer"
+		},
+		{
+			"name": "Talk19zehn",
+			"email": "kontakt@ongray-design.de",
+			"homepage": "http://www.ongray-design.de/",
+			"role": "Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "tas2580 Paypal",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}
