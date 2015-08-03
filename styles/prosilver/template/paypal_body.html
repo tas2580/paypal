@@ -1,77 +1,64 @@
 <!-- INCLUDE overall_header.html -->
+<!-- IF not S_IS_BOT -->
+<div class="navbar">
+	<div class="inner">
+		<ul class="topiclist">
+			<li class="header"><dl><dt>{L_PAYPAL_INFO}</dt></dl></li>
+		</ul>
+			<div style="margin: 1%;">
+				<p style="text-align:left;">{SITENAME} {L_PAYPAL_TEXT}</p>
+			</div>
+		<div style="margin: 3%;">
+			<div class="panel"><br />
+				<p style="text-align: left; padding: 6px;">{L_PAYPAL_MSG}</p>
 
-<h2>{L_PAYPAL_TITLE}</h2>
-<p>{PAYPAL_DESCRIPTION}</p>
+				<!-- reference and all paypal codes
+				https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
+				https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
+				//-->
 
-<div class="forabg">
-<div class="panel">
-  <br />
-	<h3>Klicke bitte auf das Auswahlmenü, um einen von dir gewählten Betrag anzuweisen.</h3>
-	<br /><br /><br />
-
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-	<div style="text-align: center;">
-		<input type="hidden" name="cmd" value="_xclick" />
-		<input type="hidden" name="business" value="{PAYPAL_EMAIL}" />
-		<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}" />
-		<input type="hidden" name="no_note" value="1" />
-		<input type="hidden" name="no_shipping" value="1" />
-		<input type="hidden" name="bn" value="PP-DonationsBF" />
-		<input type="hidden" name="tax" value="0" />
-		<select name="currency_code" id="currency_code">
-			<option value="EUR" selected="selected">€ EUR</option>
-		</select>
-
-		<select name="amount">{AMOUNT_LIST}</select>
-		<br /><br />
-		<input  class="button1" type="submit" id="submit" value="{L_DONATE}" />
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<div style="text-align: center;">
+					<input type="hidden" name="cmd" value="_xclick" />
+					<input type="hidden" name="business" value="{L_PAYPAL_EMAIL}" />
+					<input type="hidden" name="item_name" value="{L_DONATION_TITLE}" />
+					<input type="hidden" name="no_note" value="1" />
+					<input type="hidden" name="no_shipping" value="1" />
+					<input type="hidden" name="bn" value="PP-DonationsBF" />
+					<input type="hidden" name="tax" value="0" />
+					<select name="currency_code" id="currency_code">
+						<option value="EUR" selected="selected">{L_DONATION_EUR}</option>
+						<option value="USD">{L_DONATION_USD}</option>
+						<option value="GBP">{L_DONATION_GBP}</option>
+						<option value="JPY">{L_DONATION_JPY}</option>
+						<option value="AUD">{L_DONATION_AUD}</option>
+						<option value="CAD">{L_DONATION_CAD}</option>
+						<option value="HKD">{L_DONATION_HKD}</option>
+					</select>
+				<!--
+				ISO 8859-1 character set overview
+				http://www.htmlhelp.com/reference/charset/
+				//-->
+				<select name="amount">
+					<option value="5.50">5.50</option>
+					<option value="10.00">10.00</option>
+					<option value="20.00">20.00</option>
+					<option value="25.00">25.00</option>
+					<option value="50.00">50.00</option>
+					<option value="75.00">75.00</option>
+					<option value="100.00">100.00</option>
+				</select>
+				<br /><br />
+				<input type="image" src="images/paypal-button.gif" style="border: 0px; background-color: transparent; padding: 16px;" />
+				<!-- paypal-button.gif update needed //-->
+				</div>
+				</form>
+			</div>
+		</div>
 	</div>
-	</form>
-
-
-
-
-<!-- SELECT -->
-<div style="margin-top: 45px">
-  <h3 style="text-align:left;">Du hast deine <a href="http://www.ongray-design.de/forum/viewtopic.php?f=92&amp;t=817">Styleauswahl</a> getroffen und möchtest den Festbetrag der Spende in Höhe von 25,00 Euro für das Style anweisen.<br />Bitte betätige das Auswahlmenü, um das Style auszuwählen.</h3>
+		<p style="text-align: center; padding: 6px;">{L_DONATION_INFO}</p>
 </div>
-<br />
-<form action="" method="post">
-<div style="text-align: center;">
-<select name="style_select" onchange="submit()">
-<option value = "0" selected = "selected">Style-Auswahl</option><option value = "1" >asred</option><option value = "2" >columnprosilver</option><option value = "3" >ongray_crying</option><option value = "4" >ongray_oneline</option><option value = "5" >ongraydark</option><option value = "6" >ongraydark_bluetouch</option><option value = "7" >ongraydark_deepflower</option><option value = "8" >ongraydark_football</option><option value = "9" >ongraydark_thewitch</option><option value = "10" >ongraydarksoccer</option><option value = "11" >prosilver_ongray_edition</option>
-</select>
-<input type="hidden" value="absenden" />
-</div>
-</form>
-
-
-<div style="text-align: center; margin-top:10px" />
-<input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="ZRLLASURHW5FN" />
-<input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_SM.gif" name="submit" alt="" />
-<input type="hidden" name="item_name" value="Anonymous - Style-Auswahl" />
-<input type="hidden" name="no_note" value="1" />
-<input type="hidden" name="no_shipping" value="1" />
-<input type="hidden" name="bn" value="PP-DonationsBF" />
-<input type="hidden" name="tax" value="0" />
-<input type="hidden" name="currency_code" value="EUR" />
-<p> </p>
-<input type="hidden" name="amount" value="" />
-<input type="hidden" name="return" value="http://www.ongray-design.de/forum/index.php"/>
-<!--
-ISO 8859-1 character set overview
-http://www.htmlhelp.com/reference/charset/
-//-->
-
-
-</div>
-<!-- SELECT -->
-<br />
-<br />
-  <p>Vielen Dank für deine freundliche Unterstützung.</p>
-  </div>
-</div>
-<span class="corners-bottom"><span></span></span>
-
+<div>
+<div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
+<!-- ENDIF -->
 <!-- INCLUDE overall_footer.html -->
