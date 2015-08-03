@@ -1,8 +1,8 @@
 <?php
 /**
 *
-* @package phpBB Extension - Paypal
- * @copyright (c) 2015 tas2580 (https://tas2580.net)
+* @package phpBB Extension - Paypal - Englisch
+* @copyright (c) 2015 tas2580 (https://tas2580.net)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
@@ -32,6 +32,26 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 //
 $lang = array_merge($lang, array(
-	'PAYPAL'					=> 'Paypal',
-	'ACP_PAYPAL_TITLE'			=> 'Paypal',
+	'PAYPAL'					=> 'Paypal Donation',
+	'ACP_PAYPAL_TITLE' 			=> 'Paypal',
+	'PAYPAL_INFO'				=> 'Instruct PayPal online with your amount',
+	'PAYPAL_TEXT'				=> '- Everybody who wants to help this project could do it with a little donation.',
+	'PAYPAL_MSG'				=> 'Click on the picture to donate. Please click on the drop down menu for instructing a selected amount of you.',
+
+	'DONATION_INFO'				=> 'Thank you for your friendly assistance.',
+
+	'PAYPAL_EMAIL'				=> 'xxxx@xxx.tld',
+	'DONATION_TITLE'			=> 'Your donation title',
+	'PAYPALINFO_EXPLAIN'		=> 'Support this project; Instruct an amount via PayPal to pay voluntarily.',
+
+	'DONATION_USD'				=> '$ USD',
+	'DONATION_EUR'				=> '€ EUR',
+	'DONATION_GBP'				=> '£ GBP',
+	'DONATION_JPY'				=> '¥ JPY',
+	'DONATION_AUD'				=> '$ AUD',
+	'DONATION_CAD'				=> '$ CAD',
+	'DONATION_HKD'				=> '$ HKD',
+
+	'COPYRIGHT_PAYPALEXTENSION'	=> 'Paypal-Extension created by <a href="https://tas2580.net">tas2580</a> 2015',
+	'PAYPALDESIGNANDINFO'		=> 'Paypalsite: <a href="http://www.ongray-design.de/">Design by Talk19Zehn</a> 2014-2015',
 ));
