@@ -16,7 +16,7 @@
 				https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
 				https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
 				//-->
-
+				<!-- Please adapt your statement on their own responsibility and with great care //-->
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<div style="text-align: center;">
 					<input type="hidden" name="cmd" value="_xclick" />
@@ -48,15 +48,15 @@
 					<option value="75.00">75.00</option>
 					<option value="100.00">100.00</option>
 				</select>
-				<br /><br />
-				<input type="image" src="images/paypal-button.gif" style="border: 0px; background-color: transparent; padding: 16px;" />
-				<!-- paypal-button.gif update needed //-->
+				<br />
+				<input type="submit" name="submit" value="{L_PAYPAL_DONATION}" class="button" style="border: 0px; margin: 20px; height: 38px; background-color: transparent;" />
+				<br />
 				</div>
 				</form>
 			</div>
 		</div>
 	</div>
-		<p style="text-align: center; padding: 6px;">{L_DONATION_INFO}</p>
+		<p class="icon-thepaypal-button" style="text-align: center; padding: 24px;"><br />{L_DONATION_INFO}</p>
 </div>
 <div>
 <div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
