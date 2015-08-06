@@ -1,3 +1,19 @@
+/* For more icons look into the folder
+tas2580/paypal/styles/prosilver/theme/images and change: example
+icon-paypal_euro_dollar.png to icon-paypal_euro_dollar_lightgray.png
+if you want */
 
+.icon-paypal {
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	background-image: url("./images/icon-paypal_euro_dollar.png");
+}
 
+.rtl .icon-paypal {
+	background-position: 100% 50%;
+}
 
+.icon-thepaypal-button {
+	background-repeat: no-repeat;
+	background-image: url("./images/pp-paypal-button.gif");
+}

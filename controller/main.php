@@ -63,7 +63,29 @@ class main
 			'PAYPAL_DEFAULT_ITEM'		=> isset($this->config['paypal_default_item']) ? $this->config['paypal_default_item'] : '',
 			'PAYPAL_EMAIL'				=> isset($this->config['paypal_email']) ? $this->config['paypal_email'] : '',
 			'AMOUNT_LIST'				=> $amount_list,
+			'CURRENCY_CODE'			=> $this->currency_code_select($this->config['currency_code']),
 		));
 		return $this->helper->render('paypal_body.html', $this->user->lang['PAYPAL']);
+	}
+
+	private function currency_code_select($sel)
+	{
+		$codes = array(
+			'USD'	=> $this->user->lang('DONATION_USD'),
+			'EUR'		=> $this->user->lang('DONATION_EUR'),
+			'GBP'	=> $this->user->lang('DONATION_GBP'),
+			'JPY'		=> $this->user->lang('DONATION_JPY'),
+			'AUD'	=> $this->user->lang('DONATION_AUD'),
+			'CAD'	=> $this->user->lang('DONATION_CAD'),
+			'HKD'	=> $this->user->lang('DONATION_HKD'),
+		);
+
+		$retrun = '';
+		foreach($codes as $value => $title)
+		{
+			$selected = ($value == $sel) ? ' selected="selected"' : '';
+			$retrun .= '<option value="' . $value . '"' . $selected . '>' . $title . '</option>';
+		}
+		return $retrun;
 	}
 }

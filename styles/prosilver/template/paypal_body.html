@@ -1,10 +1,10 @@
 <!-- INCLUDE overall_header.html -->
+
+<h2>{L_PAYPAL_INFO}</h2>
+
 <!-- IF not S_IS_BOT -->
 <div class="navbar">
 	<div class="inner">
-		<ul class="topiclist">
-			<li class="header"><dl><dt>{L_PAYPAL_INFO}</dt></dl></li>
-		</ul>
 			<div style="margin: 1%;">
 				<p style="text-align:left;">{SITENAME} {L_PAYPAL_TEXT}</p>
 			</div>
@@ -20,21 +20,13 @@
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<div style="text-align: center;">
 					<input type="hidden" name="cmd" value="_xclick" />
-					<input type="hidden" name="business" value="{L_PAYPAL_EMAIL}" />
-					<input type="hidden" name="item_name" value="{L_DONATION_TITLE}" />
+					<input type="hidden" name="business" value="{PAYPAL_EMAIL}" />
+					<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}" />
 					<input type="hidden" name="no_note" value="1" />
 					<input type="hidden" name="no_shipping" value="1" />
 					<input type="hidden" name="bn" value="PP-DonationsBF" />
 					<input type="hidden" name="tax" value="0" />
-					<select name="currency_code" id="currency_code">
-						<option value="EUR" selected="selected">{L_DONATION_EUR}</option>
-						<option value="USD">{L_DONATION_USD}</option>
-						<option value="GBP">{L_DONATION_GBP}</option>
-						<option value="JPY">{L_DONATION_JPY}</option>
-						<option value="AUD">{L_DONATION_AUD}</option>
-						<option value="CAD">{L_DONATION_CAD}</option>
-						<option value="HKD">{L_DONATION_HKD}</option>
-					</select>
+					<select name="currency_code" id="currency_code">{CURRENCY_CODE}</select>
 				<!--
 				ISO 8859-1 character set overview
 				http://www.htmlhelp.com/reference/charset/
@@ -56,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-		<p class="icon-thepaypal-button" style="text-align: center; padding: 24px;"><br />{L_DONATION_INFO}</p>
+		<p style="text-align: center; padding: 24px;"><br />{L_DONATION_INFO}</p>
 </div>
 <div>
 <div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
