@@ -43,4 +43,18 @@ class initial_module extends \phpbb\db\migration\migration
 			)),
 		);
 	}
+	public function update_schema()
+	{
+		return array(
+			'add_tables'	=> array(
+				$this->table_prefix . 'paypal_amount'	=> array(
+					'COLUMNS'	=> array(
+						'amount_id'			=> array('UINT', null, 'auto_increment'),
+						'amount_value'			=> array('FLOAT', '0.00'),
+					),
+					'PRIMARY_KEY'	=> 'amount_id',
+				),
+			),
+		);
+	}
 }

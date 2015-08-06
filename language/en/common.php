@@ -37,7 +37,7 @@ $lang = array_merge($lang, array(
 	'PAYPAL_INFO'				=> 'Instruct PayPal online with your amount',
 	'PAYPAL_TEXT'				=> '- Everybody who wants to help this project could do it with a little donation.',
 	'PAYPAL_MSG'				=> 'Click on the picture to donate. Please click on the drop down menu for instructing a selected amount of you.',
-	'PAYPAL_DONATION'			 => 'Your payment amount instruct'
+	'PAYPAL_DONATION'			 => 'Your payment amount instruct',
 	'DONATION_INFO'				=> 'Thank you for your friendly assistance.',
 
 	'PAYPAL_EMAIL'				=> 'xxxx@xxx.tld',

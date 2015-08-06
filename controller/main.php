@@ -25,12 +25,13 @@ class main
 	* @param \phpbb\template\template	$template
 	* @param \phpbb\user				$user
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
+	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $table_amount)
 	{
 		$this->config = $config;
 		$this->helper = $helper;
 		$this->template = $template;
 		$this->user = $user;
+		$this->table_amount = $table_amount;
 	}
 	/**
 	* Controller for route /paypal
@@ -42,7 +43,7 @@ class main
 		$this->user->add_lang_ext('tas2580/paypal', 'common');
 		$amounts = array(
 
-			'5,00',
+			'5.00',
 			'10.00',
 
 		);
