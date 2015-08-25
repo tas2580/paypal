@@ -7,6 +7,7 @@
 *
 */
 namespace tas2580\paypal\controller;
+
 class main
 {
 	/* @var \phpbb\config\config */
@@ -48,7 +49,7 @@ class main
 
 		);
 		$amount_list = '';
-		foreach($amounts as $amount)
+		foreach ($amounts as $amount)
 		{
 			$amount_list .= '<option value="' . $amount . '">' . $amount . '</option>';
 		}
@@ -81,7 +82,7 @@ class main
 		);
 
 		$retrun = '';
-		foreach($codes as $value => $title)
+		foreach ($codes as $value => $title)
 		{
 			$selected = ($value == $sel) ? ' selected="selected"' : '';
 			$retrun .= '<option value="' . $value . '"' . $selected . '>' . $title . '</option>';

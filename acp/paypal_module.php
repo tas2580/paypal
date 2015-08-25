@@ -19,8 +19,7 @@ class paypal_module
 
 		$user->add_lang_ext('tas2580/paypal', 'common');
 
-
-		switch($mode)
+		switch ($mode)
 		{
 			case 'settings':
 				$this->tpl_name = 'acp_paypal_body';
@@ -57,12 +56,8 @@ class paypal_module
 			case 'items':
 				$this->tpl_name = 'acp_paypal_items_body';
 				$this->page_title = $user->lang('ACP_PAYPAL_ITEMS');
-
-
 				break;
 		}
-
-
 	}
 
 	private function currency_code_select($sel)
@@ -79,7 +74,7 @@ class paypal_module
 		);
 
 		$retrun = '';
-		foreach($codes as $value => $title)
+		foreach ($codes as $value => $title)
 		{
 			$selected = ($value == $sel) ? ' selected="selected"' : '';
 			$retrun .= '<option value="' . $value . '"' . $selected . '>' . $title . '</option>';
