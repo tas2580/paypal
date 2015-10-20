@@ -43,7 +43,6 @@ class paypal_module
 					trigger_error($user->lang('ACP_SAVED') . adm_back_link($this->u_action));
 				}
 
-
 				// Form is submitted
 				if ($request->is_set_post('submit_amount'))
 				{
@@ -67,8 +66,6 @@ class paypal_module
 						'AMOUNT'		=> number_format($row['amount_value'] / 100, 2),
 					));
 				}
-
-
 
 				$template->assign_vars(array(
 					'U_ACTION'				=> $this->u_action,
