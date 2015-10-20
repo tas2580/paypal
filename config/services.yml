@@ -6,6 +6,7 @@ services:
         class: tas2580\paypal\controller\main
         arguments:
             - @config
+            - @dbal.conn
             - @controller.helper
             - @template
             - @user

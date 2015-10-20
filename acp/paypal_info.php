@@ -23,11 +23,6 @@ class paypal_info
 					'auth'	=> 'ext_tas2580/paypal && acl_a_board',
 					'cat'		=> array('ACP_PAYPAL_TITLE')
 				),
-				'items'		=> array(
-					'title'		=> 'ACP_PAYPAL_ITEMS',
-					'auth'	=> 'ext_tas2580/paypal && acl_a_board',
-					'cat'		=> array('ACP_PAYPAL_ITEMS')
-				),
 			),
 		);
 	}

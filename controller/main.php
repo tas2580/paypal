@@ -12,6 +12,8 @@ class main
 {
 	/* @var \phpbb\config\config */
 	protected $config;
+	/* @var \phpbb\db\driver\driver */
+	protected $db;
 	/* @var \phpbb\controller\helper */
 	protected $helper;
 	/* @var \phpbb\template\template */
@@ -26,9 +28,10 @@ class main
 	* @param \phpbb\template\template	$template
 	* @param \phpbb\user				$user
 	*/
-	public function __construct(\phpbb\config\config $config, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $table_amount)
+	public function __construct(\phpbb\config\config $config, \phpbb\db\driver\driver_interface $db, \phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, $table_amount)
 	{
 		$this->config = $config;
+		$this->db = $db;
 		$this->helper = $helper;
 		$this->template = $template;
 		$this->user = $user;
@@ -42,22 +45,16 @@ class main
 	public function handle()
 	{
 		$this->user->add_lang_ext('tas2580/paypal', 'common');
-		$amounts = array(
 
-			'5.00',
-			'10.00',
-
-		);
 		$amount_list = '';
-		foreach ($amounts as $amount)
+		$sql = 'SELECT *
+			FROM ' . $this->table_amount . '
+			ORDER BY amount_value';
+		$result = $this->db->sql_query($sql);
+		while ($row = $this->db->sql_fetchrow($result))
 		{
-			$amount_list .= '<option value="' . $amount . '">' . $amount . '</option>';
+			$amount_list .= '<option value="' . number_format($row['amount_value'] / 100, 2) . '">' . number_format($row['amount_value'] / 100, 2) . '</option>';
 		}
-
-		$this->template->assign_block_vars('amount', array(
-			'VALUE'		=> '',
-			'TITLE'		=> '',
-		));
 
 		$this->template->assign_vars(array(
 			'PAYPAL_DESCRIPTION'		=> isset($this->config['paypal_description']) ? $this->config['paypal_description'] : '',

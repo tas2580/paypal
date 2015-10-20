@@ -44,6 +44,7 @@ $lang = array_merge($lang, array(
 	'DONATION_TITLE'			=> '- Your payment amount instruct voluntarily',
 	'PAYPALINFO_EXPLAIN'		=> 'Support this project; Instruct an amount via PayPal to pay voluntarily.',
 
+	'DONATION_'					=> 'N/A',
 	'DONATION_USD'				=> '$ USD',
 	'DONATION_EUR'				=> '€ EUR',
 	'DONATION_GBP'				=> '£ GBP',

@@ -1,7 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 <h1>{L_ACP_PAYPAL_TITLE}</h1>
 
-<form method="post" action="{U_ACTION}" enctype="multipart/form-data">
+<form method="post" action="{U_ACTION}">
 <fieldset>
 	<legend>{L_ACP_SETTINGS}</legend>
 	<dl>
@@ -29,6 +29,35 @@
 		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
 	</p>
 	{S_FORM_TOKEN}
+</fieldset>
+</form>
+<br />
+
+
+<h2>{L_ACP_AMOUNT_LIST}</h2>
+<form method="post" action="{U_ACTION}">
+<table class="table1">
+	<col class="col1" />
+<thead>
+<tr>
+	<th style="width: 80%">{L_ACP_AMOUNT}</th>
+	<th>{L_ACTION}</th>
+</tr>
+</thead>
+<tbody>
+	<!-- BEGIN amounts -->
+	<tr>
+		<td><strong>{amounts.AMOUNT} {SEL_CURRENCY_CODE}</strong></td>
+		<td><a href="{amounts.U_DELETE}">{L_DELETE}</a></td>
+	</tr>
+	<!-- END amounts -->
+</tbody>
+</table>
+
+
+
+<fieldset class="quick">
+	{L_ACP_ADD_AMOUNT} <input type="text" name="add_amount" value="" /> <input class="button2" type="submit" name="submit_amount" value="{L_SUBMIT}" />
 </fieldset>
 </form>
 <!-- INCLUDE overall_footer.html -->

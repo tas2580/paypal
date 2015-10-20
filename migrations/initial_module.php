@@ -33,14 +33,6 @@ class initial_module extends \phpbb\db\migration\migration
 					'modes'				=> array('settings'),
 				),
 			)),
-			array('module.add', array(
-				'acp',
-				'ACP_PAYPAL_TITLE',
-				array(
-					'module_basename'	=> '\tas2580\paypal\acp\paypal_module',
-					'modes'				=> array('items'),
-				),
-			)),
 		);
 	}
 	public function update_schema()
@@ -50,7 +42,7 @@ class initial_module extends \phpbb\db\migration\migration
 				$this->table_prefix . 'paypal_amount'	=> array(
 					'COLUMNS'	=> array(
 						'amount_id'			=> array('UINT', null, 'auto_increment'),
-						'amount_value'			=> array('FLOAT', '0.00'),
+						'amount_value'			=> array('UINT', '0'),
 					),
 					'PRIMARY_KEY'	=> 'amount_id',
 				),
