@@ -3,9 +3,9 @@
 <h2>{L_PAYPAL_INFO}</h2>
 
 <!-- IF not S_IS_BOT -->
-<div class="navbar">
+<div>
 	<div class="inner">
-		<p style="text-align:left;">{PAYPAL_DESCRIPTION}</p>
+		<p style="text-align: left; margin-top: 26px;">{PAYPAL_DESCRIPTION}</p>
 		<div style="margin: 3%;">
 			<div class="panel"><br />
 				<p style="text-align: left; padding: 6px;">{L_PAYPAL_MSG}</p>
@@ -14,7 +14,8 @@
 				https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
 				https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
 				//-->
-				<!-- Please adapt your statement on their own responsibility and with great care //-->
+				<!-- Note that you must customize the button code to your specific and legal conditions necessary and
+				please adapt your statement on their own responsibility and with great care //-->
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 				<div style="text-align: center;">
 					<input type="hidden" name="cmd" value="_xclick" />
@@ -45,4 +46,5 @@
 <div>
 <div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
 <!-- ENDIF -->
+
 <!-- INCLUDE overall_footer.html -->
