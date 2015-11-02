@@ -47,7 +47,7 @@ $lang = array_merge($lang, array(
 	'ACP_ADD_AMOUNT'					=> 'Set your amounts - example: 1000 the result is 10.00',
 	'ACP_SETTINGS'						=> 'Paypal settings',
 	'ACP_SAVED'							=> 'Your details have been stored',
-
+	'AMOUNT_DELETED'					=> 'The amount was deleted',
 	'PAYPAL_INFO'						=> 'Instruct PayPal online with your amount',
 	'PAYPAL_TEXT'						=> '- Everybody who wants to help this project could do it with a little donation.',
 	'PAYPAL_MSG'						=> 'Please click on the drop down menu for instructing a selected amount of you, click on the button to donate.',

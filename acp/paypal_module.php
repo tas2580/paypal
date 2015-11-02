@@ -27,6 +27,25 @@ class paypal_module
 
 				add_form_key('acp_paypal');
 
+				// delete amount
+				if ($request->is_set('delete'))
+				{
+					$id = $request->variable('delete', 0);
+					if (confirm_box(true))
+					{
+						$sql = 'DELETE FROM ' . $table_prefix . 'paypal_amount WHERE amount_id = ' . (int) $id;
+						$result = $db->sql_query($sql);
+						trigger_error($user->lang['AMOUNT_DELETED'] . adm_back_link($this->u_action));
+					}
+					else
+					{
+						confirm_box(false, $user->lang['CONFIRM_OPERATION'], build_hidden_fields(array(
+							'action'	=> 'delete',
+							'id'		=> $id))
+						);
+					}
+				}
+
 				// Form is submitted
 				if ($request->is_set_post('submit'))
 				{
@@ -64,6 +83,7 @@ class paypal_module
 				{
 					$template->assign_block_vars('amounts', array(
 						'AMOUNT'		=> number_format($row['amount_value'] / 100, 2),
+						'U_DELETE'	=> $this->u_action . '&delete=' . $row['amount_id'],
 					));
 				}
 

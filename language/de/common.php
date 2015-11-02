@@ -47,7 +47,7 @@ $lang = array_merge($lang, array(
 	'ACP_ADD_AMOUNT'					=> 'Erfasse deine Zahlbeträge - Beispiel: 1000 ergibt 10.00',
 	'ACP_SETTINGS'						=> 'Paypal-Angaben',
 	'ACP_SAVED'							=> 'Deine Paypal-Angaben wurden gespeichert',
-
+	'AMOUNT_DELETED'					=> 'Der Betrag wurde gelöscht',
 	'PAYPAL_INFO' 						=> 'Mit PayPal online deinen Betrag anweisen',
 	'PAYPAL_TEXT'						=> '- ist eine Website ohne jedes Gewinninteresse. Jeder, der dieses Projekt unterstützen möchte, kann dies mit einem Betrag gern tun.',
 	'PAYPAL_MSG'						=> 'Klicke bitte auf das Auswahlmenü, um einen von dir gewählten Betrag anzuweisen.',
