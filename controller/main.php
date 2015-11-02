@@ -69,13 +69,24 @@ class main
 	private function currency_code_select($sel)
 	{
 		$codes = array(
-			'USD'	=> $this->user->lang('DONATION_USD'),
-			'EUR'		=> $this->user->lang('DONATION_EUR'),
-			'GBP'	=> $this->user->lang('DONATION_GBP'),
-			'JPY'		=> $this->user->lang('DONATION_JPY'),
 			'AUD'	=> $this->user->lang('DONATION_AUD'),
 			'CAD'	=> $this->user->lang('DONATION_CAD'),
+			'CHF'		=> $this->user->lang('DONATION_CHF'),
+			'CZK'		=> $this->user->lang('DONATION_CZK'),
+			'DKK'		=> $this->user->lang('DONATION_DKK'),
+			'EUR'		=> $this->user->lang('DONATION_EUR'),
+			'GBP'	=> $this->user->lang('DONATION_GBP'),
 			'HKD'	=> $this->user->lang('DONATION_HKD'),
+			'HUF'		=> $this->user->lang('DONATION_HUF'),
+			'ILS'		=> $this->user->lang('DONATION_ILS'),
+			'JPY'		=> $this->user->lang('DONATION_JPY'),
+			'MXN'	=> $this->user->lang('DONATION_MXN'),
+			'NOK'	=> $this->user->lang('DONATION_NOK'),
+			'NZD'	=> $this->user->lang('DONATION_NZD'),
+			'PLN'		=> $this->user->lang('DONATION_PLN'),
+			'SEK'		=> $this->user->lang('DONATION_SEK'),
+			'SGD'	=> $this->user->lang('DONATION_SGD'),
+			'USD'	=> $this->user->lang('DONATION_USD'),
 		);
 
 		$retrun = '';
