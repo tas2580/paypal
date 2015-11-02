@@ -33,7 +33,6 @@ if (empty($lang) || !is_array($lang))
 //
 $lang = array_merge($lang, array(
 	'PAYPAL' 							=> 'Paypal',
-	'ACP_PAYPAL_TITLE'					=> 'Paypal<br />Einstellungen<br />',
 	'ACP_PAYPAL_DEFAULT_ITEM'			=> 'Paypal-Beschreibung',
 	'ACP_PAYPAL_DEFAULT_ITEM_EXPLAIN'	=> 'Ein zuordenbarer Text deiner Paypalabwicklung',
 	'ACP_PAYPAL_EMAIL'					=> 'Paypal-E-Mail',
