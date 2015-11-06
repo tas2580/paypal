@@ -23,17 +23,17 @@ class listener implements EventSubscriberInterface
 	static public function getSubscribedEvents()
 	{
 		return array(
-			'core.page_header'						=> 'page_header',
+			'core.page_header'		=> 'page_header',
 		);
 	}
 
-	/* @var \phpbb\controller\helper */
+	/*'* @var \phpbb\controller\helper */
 	protected $helper;
 
-	/* @var \phpbb\template\template */
+	/** @var \phpbb\template\template */
 	protected $template;
 
-	/* @var \phpbb\user */
+	/* *@var \phpbb\user */
 	protected $user;
 
 	/**
