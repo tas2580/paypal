@@ -33,6 +33,7 @@ if (empty($lang) || !is_array($lang))
 //
 $lang = array_merge($lang, array(
 	'PAYPAL' 							=> 'Paypal',
+	'ACP_PAYPAL_TITLE'					=> 'Paypal-Einstellungen',
 	'ACP_PAYPAL_DEFAULT_ITEM'			=> 'Paypal-Beschreibung',
 	'ACP_PAYPAL_DEFAULT_ITEM_EXPLAIN'	=> 'Ein zuordenbarer Text deiner Paypalabwicklung',
 	'ACP_PAYPAL_EMAIL'					=> 'Paypal-E-Mail',
@@ -44,18 +45,18 @@ $lang = array_merge($lang, array(
 	'ACP_SUBMIT'						=> 'Bestätigung deiner Angaben',
 	'ACP_AMOUNT_LIST'					=> 'Zahlbeträge',
 	'ACP_AMOUNT'						=> 'Deine Zahlbeträge',
-	'ACP_ADD_AMOUNT'					=> 'Erfasse deine Zahlbeträge - Beispiel: 1000 ergibt 10.00',
+	'ACP_ADD_AMOUNT'					=> 'Erfasse bitte hier deine Zahlbeträge - Beispiel: 1000 ergibt 10.00',
 	'ACP_SETTINGS'						=> 'Paypal-Angaben',
 	'ACP_SAVED'							=> 'Deine Paypal-Angaben wurden gespeichert',
-	'AMOUNT_DELETED'					=> 'Der Betrag wurde gelöscht',
-	'PAYPAL_INFO' 						=> 'Mit PayPal online deinen Betrag anweisen',
-	'PAYPAL_TEXT'						=> '- ist eine Website ohne jedes Gewinninteresse. Jeder, der dieses Projekt unterstützen möchte, kann dies mit einem Betrag gern tun.',
+
+	'PAYPAL_INFO' 						=> 'Mit PayPal online einen Festbetrag anweisen',
+	'PAYPAL_TEXT'						=> 'Jeder, der dieses Projekt unterstützen möchte, kann dies mit einem Festbetrag gern tun. Unsere Website hat kein Gewinninteresse.',
 	'PAYPAL_MSG'						=> 'Klicke bitte auf das Auswahlmenü, um einen von dir gewählten Betrag anzuweisen.',
 	'PAYPAL_DONATION'					=> 'Zahlbetrag anweisen',
 	'DONATION_INFO'						=> 'Vielen Dank für deine freundliche Unterstützung.',
 
-	'DONATION_TITLE'			=> 'Meinen Betrag zur Zahlung freiwillig spenden und anweisen',
-	'PAYPALINFO_EXPLAIN'		=> 'Dieses Projekt unterstützen; Einen Betrag via PayPal zur Zahlung freiwillig anweisen',
+	'DONATION_TITLE'			=> 'Freiwillig einen Festbetrag spenden und zur Zahlung anweisen:',
+	'PAYPALINFO_EXPLAIN'		=> 'Dieses Projekt unterstützen - Einen Festbetrag mit PayPal zur Zahlung freiwillig anweisen',
 
 	'DONATION_'					=> 'N/A',
 	'DONATION_AUD'				=> 'Australische Dollar (AUD)',
