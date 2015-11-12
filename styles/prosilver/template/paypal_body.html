@@ -3,47 +3,49 @@
 <h2>{L_PAYPAL_INFO}</h2>
 
 <!-- IF not S_IS_BOT -->
-<div>
+<div class="panel pppaypalbody">
 	<div class="inner">
-		<p style="text-align: left; margin-top: 26px;">{PAYPAL_DESCRIPTION}</p>
-		<div style="margin: 3%;">
-			<div class="panel"><br />
-				<p style="text-align: left; padding: 6px;">{L_PAYPAL_MSG}<br />{L_DONATION_TITLE}</p>
+		<div class="content">
+			<p style="text-align: left; margin-top: 26px;">{PAYPAL_DESCRIPTION}</p>
+			<div style="margin: 3%;">
+				<div class="panel"><br />
+					<p style="text-align: left; padding: 6px;">{L_PAYPAL_MSG}<br />{L_DONATION_TITLE}</p>
 
-				<!-- reference and all paypal codes
-				https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
-				https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
-				//-->
-				<!-- Note that you must customize the button code to your specific and legal conditions necessary and
-				please adapt your statement on their own responsibility and with great care //-->
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-				<div style="text-align: center;">
-					<input type="hidden" name="cmd" value="_xclick" />
-					<input type="hidden" name="business" value="{PAYPAL_EMAIL}" />
-					<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}" />
-					<input type="hidden" name="no_note" value="1" />
-					<input type="hidden" name="no_shipping" value="1" />
-					<input type="hidden" name="bn" value="PP-DonationsBF" />
-					<input type="hidden" name="tax" value="0" />
-					<select name="currency_code" id="currency_code">{CURRENCY_CODE}</select>
-				<!--
-				ISO 8859-1 character set overview
-				http://www.htmlhelp.com/reference/charset/
-				//-->
-				<select name="amount">
-					{AMOUNT_LIST}
-				</select>
-				<br />
-				<input type="submit" name="submit" value="{L_PAYPAL_DONATION}" class="button" style="border: 0px; margin: 20px; height: 38px; background-color: transparent;" />
-				<br />
+					<!-- reference and all paypal codes
+					https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
+					https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
+					//-->
+					<!-- Note that you must customize the button code to your specific and legal conditions necessary and
+					please adapt your statement on their own responsibility and with great care //-->
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<div style="text-align: center;">
+						<input type="hidden" name="cmd" value="_xclick" />
+						<input type="hidden" name="business" value="{PAYPAL_EMAIL}" />
+						<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}" />
+						<input type="hidden" name="no_note" value="1" />
+						<input type="hidden" name="no_shipping" value="1" />
+						<input type="hidden" name="bn" value="PP-DonationsBF" />
+						<input type="hidden" name="tax" value="0" />
+						<select name="currency_code" id="currency_code">{CURRENCY_CODE}</select>
+					<!--
+					ISO 8859-1 character set overview
+					http://www.htmlhelp.com/reference/charset/
+					//-->
+					<select name="amount">
+						{AMOUNT_LIST}
+					</select>
+					<br />
+					<input type="submit" name="submit" value="{L_PAYPAL_DONATION}" class="button" style="border: 0px; margin: 20px; height: 38px; background-color: transparent;" />
+					<br />
+					</div>
+					</form>
 				</div>
-				</form>
 			</div>
 		</div>
+		<p style="text-align: center; padding: 24px;">{L_DONATION_INFO}</p>
 	</div>
-	<p style="text-align: center; padding: 24px;">{L_DONATION_INFO}</p>
 </div>
-<div>
+
 <div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
 <!-- ENDIF -->
 
