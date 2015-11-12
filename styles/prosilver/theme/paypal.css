@@ -17,3 +17,8 @@ if you want */
 	background-repeat: no-repeat;
 	background-image: url("./images/pp-paypal-button.gif");
 }
+
+.pppaypalbody {
+	font-size: 1.2em;
+	line-height: 1.4;
+}
