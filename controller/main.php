@@ -62,6 +62,7 @@ class main
 			'PAYPAL_EMAIL'				=> isset($this->config['paypal_email']) ? $this->config['paypal_email'] : '',
 			'AMOUNT_LIST'				=> $amount_list,
 			'CURRENCY_CODE'			=> $this->currency_code_select($this->config['currency_code']),
+			'RETURN_URL'				=> $this->helper->route('tas2580_paypal_controller', array(), true, '', \Symfony\Component\Routing\Generator\UrlGeneratorInterface::ABSOLUTE_URL)
 		));
 		return $this->helper->render('paypal_body.html', $this->user->lang['PAYPAL']);
 	}
