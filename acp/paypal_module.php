@@ -55,8 +55,8 @@ class paypal_module
 					}
 
 					$config->set('paypal_email', $request->variable('paypal_email', ''));
-					$config->set('paypal_default_item', $request->variable('paypal_default_item', ''));
-					$config->set('paypal_description', $request->variable('paypal_description', ''));
+					$config->set('paypal_default_item', $request->variable('paypal_default_item', '', true));
+					$config->set('paypal_description', $request->variable('paypal_description', '', true));
 					$config->set('currency_code', $request->variable('currency_code', ''));
 
 					trigger_error($user->lang('ACP_SAVED') . adm_back_link($this->u_action));
