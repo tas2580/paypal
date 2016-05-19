@@ -1,18 +1,17 @@
 <?php
 /**
 *
-* @package phpBB Extension - tas2580 Paypal
+* @package phpBB Extension - Paypal - German (Casual)
 * @copyright (c) 2015 tas2580 (https://tas2580.net)
 * @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
 *
 */
-/**
-* DO NOT CHANGE
-*/
+
 if (!defined('IN_PHPBB'))
 {
 	exit;
 }
+
 if (empty($lang) || !is_array($lang))
 {
 	$lang = array();
@@ -33,8 +32,5 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 //
 $lang = array_merge($lang, array(
-	'ACP_PAYPAL_TITLE'		=> 'Paypal',
-	'ACP_PAYPAL_SETTINGS'	=> 'Einstellungen',
-	'ACP_PAYPAL_ITEMS'		=> 'Paypal Items',
-	'ACP_PAYPAL_DONATIONS'	=> 'Spender',
+	'PAYPAL'					=> 'Spenden',
 ));

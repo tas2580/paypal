@@ -1,3 +1,6 @@
 tas2580_paypal_controller:
-    pattern: /paypal
-    defaults: { _controller: tas2580.paypal.main:handle }
+    pattern: /paypal/
+    defaults: { _controller: tas2580.paypal.main:page }
+tas2580_paypal_ipn:
+    pattern: /paypal/ipn
+    defaults: { _controller: tas2580.paypal.main:ipn }

@@ -27,21 +27,21 @@ class listener implements EventSubscriberInterface
 		);
 	}
 
-	/*'* @var \phpbb\controller\helper */
+	/** @var \phpbb\controller\helper */
 	protected $helper;
 
 	/** @var \phpbb\template\template */
 	protected $template;
 
-	/* *@var \phpbb\user */
+	/**@var \phpbb\user */
 	protected $user;
 
 	/**
 	* Constructor
 	*
-	* @param \phpbb\controller\helper		$helper		Controller helper object
-	* @param \phpbb\template			$template		Template object
-	* @param \phpbb\user				$user		User object
+	* @param \phpbb\controller\helper		$helper			Controller helper object
+	* @param \phpbb\template				$template		Template object
+	* @param \phpbb\user					$user			User object
 	*/
 	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user)
 	{
@@ -50,10 +50,9 @@ class listener implements EventSubscriberInterface
 		$this->user = $user;
 	}
 
-
-	public function page_header($event)
+	public function page_header()
 	{
-		$this->user->add_lang_ext('tas2580/paypal', 'common');
+		$this->user->add_lang_ext('tas2580/paypal', 'link');
 		$this->template->assign_vars(array(
 			'U_PAYPAL'	=> $this->helper->route('tas2580_paypal_controller', array()),
 		));

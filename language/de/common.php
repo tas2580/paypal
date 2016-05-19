@@ -32,31 +32,49 @@ if (empty($lang) || !is_array($lang))
 // ’ » “ ” …
 //
 $lang = array_merge($lang, array(
-	'PAYPAL' 							=> 'Paypal',
-	'ACP_PAYPAL_TITLE'					=> 'Paypal-Einstellungen',
-	'ACP_PAYPAL_DEFAULT_ITEM'			=> 'Paypal-Beschreibung',
-	'ACP_PAYPAL_DEFAULT_ITEM_EXPLAIN'	=> 'Ein zuordenbarer Text deiner Paypalabwicklung',
-	'ACP_PAYPAL_EMAIL'					=> 'Paypal-E-Mail',
-	'ACP_PAYPAL_EMAIL_EXPLAIN'			=> 'Gib deine Paypal-E-Mail-Adresse bitte hier ein - Beispiel: xxxx@xxx.tld',
-	'ACP_PAYPAL_DESCRIPTION'			=> 'Texteingabe',
-	'ACP_PAYPAL_DESCRIPTION_EXPLAIN'	=> 'Ein wenig Text, der im Forum auf der Paypalseite angezeigt werden wird.',
-	'ACP_CURRENCY_CODE'					=> 'Währungen',
-	'ACP_CURRENCY_CODE_EXPLAIN'			=> 'Wähle die Währung, die im Auswahlmenü auf der Paypalseite im Forum voreingestellt angezeigt wird. Währungen kannst du in der common.php einfügen oder entfernen. Bitte gehe sorgfältig und eigenverantwortlich mit den Einträgen um.',
-	'ACP_SUBMIT'						=> 'Bestätigung deiner Angaben',
-	'ACP_AMOUNT_LIST'					=> 'Zahlbeträge',
-	'ACP_AMOUNT'						=> 'Deine Zahlbeträge',
-	'ACP_ADD_AMOUNT'					=> 'Erfasse bitte hier deine Zahlbeträge - Beispiel: 1000 ergibt 10.00',
-	'ACP_SETTINGS'						=> 'Paypal-Angaben',
-	'ACP_SAVED'							=> 'Deine Paypal-Angaben wurden gespeichert',
 
-	'PAYPAL_INFO' 						=> 'Mit PayPal online einen Festbetrag anweisen',
-	'PAYPAL_TEXT'						=> 'Jeder, der dieses Projekt unterstützen möchte, kann dies mit einem Festbetrag gern tun. Unsere Website hat kein Gewinninteresse.',
-	'PAYPAL_MSG'						=> 'Klicke bitte auf das Auswahlmenü, um einen von dir gewählten Betrag anzuweisen.',
-	'PAYPAL_DONATION'					=> 'Zahlbetrag anweisen',
-	'DONATION_INFO'						=> 'Vielen Dank für deine freundliche Unterstützung.',
 
-	'DONATION_TITLE'			=> 'Freiwillig einen Festbetrag spenden und zur Zahlung anweisen:',
-	'PAYPALINFO_EXPLAIN'		=> 'Dieses Projekt unterstützen - Einen Festbetrag mit PayPal zur Zahlung freiwillig anweisen',
+	// ACP settings
+	'ACP_SETTINGS'					=> 'Einstellungen',
+	'ACP_PAYPAL_EMAIL'				=> 'E-Mail',
+	'ACP_PAYPAL_EMAIL_EXPLAIN'		=> 'Gib eine E-Mail Adresse an an die Paypal zahlungen gehen sollen.',
+	'ACP_PAYPAL_TITLE'				=> 'Seiten Titel',
+	'ACP_PAYPAL_TITLE_EXPLAIN'		=> 'Gib einen Titel für die Paypal Seite an.',
+	'ACP_PAYPAL_TEXT'				=> 'Seiten Text',
+	'ACP_PAYPAL_TEXT_EXPLAIN'		=> 'Gib einen Text ein der auf der Paypal Seite angezeigt wird, du kannst hier BB Code verwenden.',
+	'ACP_CURRENCY_CODE'				=> 'Währung',
+	'ACP_CURRENCY_CODE_EXPLAIN'		=> 'Wähle eine Währung die als Standard für Zahlungen verwendet wird.',
+	'ACP_PAYPAL_SANDBOX'			=> 'Sandbox Modus',
+	'ACP_PAYPAL_SANDBOX_EXPLAIN'	=> 'Soll Paypal im <a hre="https://developer.paypal.com/developer/accounts/">Sandbox Modus</a> ausgeführt werden?',
+	'ACP_AMOUNT_LIST'				=> 'Beträge',
+	'ACP_AMOUNT'					=> 'Betrag',
+	'ACP_ADD_AMOUNT'				=> 'Betrag hinzufügen',
+	'ACP_SAVED'						=> 'Die Einstellung wurde gespeichert',
+
+	// ACP items
+	'ACP_ITEM_NAME'					=> 'Name',
+	'ACP_ITEM_NAME_EXPLAIN'			=> 'Gib einen Namen für den Gegenstand ein',
+	'ACP_ITEM_TEXT'					=> 'Beschreibung',
+	'ACP_ITEM_TEXT_EXPLAIN'			=> 'Gib eine Beschreibung für den Gegenstand ein, du kannst hier BB Code verwenden.',
+	'ACP_ADD_ITEM'					=> 'Gegenstand hinzufügen',
+	'ACP_ITEM_ADD_SUCCESS'			=> 'Der Gegenstand wurde zur Datenbank hinzugefügt.',
+	'ACP_ITEM_EDIT_SUCCESS'			=> 'der Gegenstand wurde erfolgreich bearbeidet',
+	'ITEM_DELETED'					=> 'Der Eintrag wurde erfolgreich gelöscht!',
+	'TOO_SHORT'						=> 'Der eingegebene Wert ist zu kurz',
+	'NO_ITEMS'						=> 'Du hast noch keine Gegenstände angelegt.',
+
+
+	// ACP donators
+	'USER'							=> 'Benutzer',
+	'ITEM'							=> 'Gegenstand',
+	'NO_DONATIONS'					=> 'Bis jetzt hat noch niemand etwas gespendet.',
+	'NO_CURL'						=> 'Dein Server unterstützt kein CURL, installiere die PHP CURL Erweiterung damit Benutzer die gespendet haben erfasst werden können.',
+	'DONATION_DELETED'				=> 'Der Spender wurde aus der Liste gelöscht.',
+
+	// Page
+	'SANDBOX_MODE_WARNING'			=> 'Paypal läuft im Sandbox Modus, Spenden können nur mit Paypal Testaccounts gemacht werden!',
+	'PAYPAL_DONATION'				=> 'Paypal spenden',
+	'USER_NOT_LOGGED_IN'			=> 'Du bist nicht angemeldet, melde dich an damit deine Spende auf deinen Benutzer angerechnet werden kann.',
 
 	'DONATION_'					=> 'N/A',
 	'DONATION_AUD'				=> 'Australische Dollar (AUD)',
@@ -78,6 +96,4 @@ $lang = array_merge($lang, array(
 	'DONATION_SGD'				=> 'Singapur-Dollar (SGD)',
 	'DONATION_USD'				=> 'US-Dollar (USD)',
 
-	'COPYRIGHT_PAYPALEXTENSION'	=> 'Paypal-Extension created by <a href="https://tas2580.net">tas2580</a> 2015',
-	'PAYPALDESIGNANDINFO'		=> 'Paypalseite: <a href="http://www.ongray-design.de/">Design by Talk19Zehn</a> 2014-2015',
 ));

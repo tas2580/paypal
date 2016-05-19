@@ -19,8 +19,18 @@ class paypal_info
 			'version'		=> '0.1.0',
 			'modes'		=> array(
 				'settings'		=> array(
-					'title'		=> 'ACP_PAYPAL_TITLE',
-					'auth'	=> 'ext_tas2580/paypal && acl_a_board',
+					'title'		=> 'ACP_PAYPAL_SETTINGS',
+					'auth'		=> 'ext_tas2580/paypal && acl_a_board',
+					'cat'		=> array('ACP_PAYPAL_TITLE')
+				),
+				'items'		=> array(
+					'title'		=> 'ACP_PAYPAL_ITEMS',
+					'auth'		=> 'ext_tas2580/paypal && acl_a_board',
+					'cat'		=> array('ACP_PAYPAL_TITLE')
+				),
+				'donations'		=> array(
+					'title'		=> 'ACP_PAYPAL_DONATIONS',
+					'auth'		=> 'ext_tas2580/paypal && acl_a_board',
 					'cat'		=> array('ACP_PAYPAL_TITLE')
 				),
 			),

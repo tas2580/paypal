@@ -1,6 +1,8 @@
 parameters:
     tables.paypal.amount: %core.table_prefix%paypal_amount
-
+    tables.paypal.config: %core.table_prefix%paypal_config
+    tables.paypal.donations: %core.table_prefix%paypal_donations
+    tables.paypal.items: %core.table_prefix%paypal_items
 services:
     tas2580.paypal.main:
         class: tas2580\paypal\controller\main
@@ -8,9 +10,13 @@ services:
             - @config
             - @dbal.conn
             - @controller.helper
+            - @request
             - @template
             - @user
             - %tables.paypal.amount%
+            - %tables.paypal.config%
+            - %tables.paypal.donations%
+            - %tables.paypal.items%
     tas2580.paypal.listener:
         class: tas2580\paypal\event\listener
         arguments:

@@ -1,8 +1,3 @@
-/* For more icons look into the folder
-tas2580/paypal/styles/prosilver/theme/images and change: example
-icon-paypal_euro_dollar.png to icon-paypal_euro_dollar_lightgray.png
-if you want */
-
 .icon-paypal {
 	background-position: 0 50%;
 	background-repeat: no-repeat;
@@ -13,12 +8,35 @@ if you want */
 	background-position: 100% 50%;
 }
 
-.icon-thepaypal-button {
-	background-repeat: no-repeat;
-	background-image: url("./images/pp-paypal-button.gif");
-}
 
 .pppaypalbody {
 	font-size: 1.2em;
 	line-height: 1.4;
 }
+
+
+section.items label{
+	display:inline-block;
+	background:#fff;
+	border:#333 1px solid;
+	border-radius:6px;
+	margin:10px;
+	width:200px;
+	height:250px;
+	float:left;
+	padding:5px;
+	text-align:center;
+}
+section.items label:first-line{display:block;border-bottom: 1px solid #ccc;font-weight: bold;font-size:1.2em;color:#105289}
+section.items label:hover{cursor: pointer;}
+
+section.items label img {
+	border-radius:6px; margin:5px;
+}
+
+section.items input[type=radio]:checked + label {
+    border: #D31157 2px solid;
+	margin:9px;
+}
+section.items{justify-content:center;flex-wrap: wrap; display: flex;}
+section.items input{display:none;}

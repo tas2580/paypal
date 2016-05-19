@@ -1,0 +1,66 @@
+<!-- INCLUDE overall_header.html -->
+<h1>{L_ACP_PAYPAL_ITEMS}</h1>
+
+<!-- IF S_FORM -->
+	<!-- IF ERROR -->
+		<div class="errorbox">
+			<h3>{L_ERROR}</h3>
+			<p>{ERROR}</p>
+		</div>
+	<!-- ENDIF -->
+	<form method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{ITEM_FORM_NAME}</legend>
+		<dl>
+			<dt><label for="item_name">{L_ACP_ITEM_NAME}{L_COLON}</label><br /><span>{L_ACP_ITEM_NAME_EXPLAIN}</span></dt>
+			<dd><input type="text" id="item_name" name="item_name" size="40" maxlength="255" value="{ITEM_NAME}" /></dd>
+		</dl>
+		<dl>
+			<dt><label for="item_text">{L_ACP_ITEM_TEXT}{L_COLON}</label><br /><span>{L_ACP_ITEM_TEXT_EXPLAIN}</span></dt>
+			<dd><textarea id="item_text" rows="10" cols="50" name="item_text">{ITEM_TEXT}</textarea></dd>
+		</dl>
+	</fieldset>
+
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+		{S_FORM_TOKEN}
+	</fieldset>
+	</form>
+<!-- ELSE -->
+
+	<table class="table1 zebra-table">
+
+	<thead>
+	<tr>
+		<th>{L_ACP_ITEM_NAME}</th>
+		<th>{L_ACP_AMOUNT}</th>
+		<th>{L_ACTION}</th>
+	</tr>
+	</thead>
+	<tbody>
+		<!-- IF .items -->
+		<!-- BEGIN items -->
+		<tr>
+			<td><strong>{items.ITEM}</strong></td>
+			<td><strong>{items.AMMOUNT}</strong></td>
+			<td class="actions"><a href="{items.U_EDIT}">{ICON_EDIT}</a> <a href="{items.U_DELETE}" data-ajax="row_delete">{ICON_DELETE}</a></td>
+		</tr>
+		<!-- END items -->
+		<!-- ELSE -->
+		<tr>
+			<td colspan="3">{L_NO_ITEMS}</td>
+		</tr>
+		<!-- ENDIF -->
+	</tbody>
+	</table>
+	<form method="post" action="{U_ACTION}">
+	<fieldset class="quick">
+		{L_ACP_ADD_ITEM} <input type="text" name="item_name" value="" /> <input class="button2" type="submit" name="add_item" value="{L_SUBMIT}" />
+	</fieldset>
+	</form>
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

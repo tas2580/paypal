@@ -1,53 +1,50 @@
 <!-- INCLUDE overall_header.html -->
 
-<h2>{L_PAYPAL_INFO}</h2>
-
+<h2>{PAYPAL_TITLE}</h2>
 <!-- IF not S_IS_BOT -->
 <div class="panel pppaypalbody">
 	<div class="inner">
 		<div class="content">
-			<p style="text-align: left; margin-top: 26px;">{PAYPAL_DESCRIPTION}</p>
-			<div style="margin: 3%;">
-				<div class="panel"><br />
-					<p style="text-align: left; padding: 6px;">{L_PAYPAL_MSG}<br />{L_DONATION_TITLE}</p>
+			<!-- IF S_SANDBOX -->
+			<p class="post-notice">{L_SANDBOX_MODE_WARNING}</p>
+			<!-- ENDIF -->
+			<!-- IF PAYPAL_TEXT --><p>{PAYPAL_TEXT}</p><!-- ENDIF -->
+			<form action="{PAYPAL_ACTION}" method="post">
+				<!-- IF .items -->
+				<hr>
+				<section class="items">
+					<!-- BEGIN items -->
+						<input type="radio" name="item_number" id="{items.ITEM_ID}" value="{items.ITEM_ID}">
+						<label for="{items.ITEM_ID}">{items.ITEM_NAME}<br>{items.ITEM}</label>
+					<!-- END items -->
 
-					<!-- reference and all paypal codes
-					https://www.paypal.com/cgi-bin/webscr?cmd=p/pdn/howto_checkout-outside
-					https://www.paypal.com/cgi-bin/webscr?cmd=p/sell/mc/mc_wa-outside
-					//-->
-					<!-- Note that you must customize the button code to your specific and legal conditions necessary and
-					please adapt your statement on their own responsibility and with great care //-->
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-					<div style="text-align: center;">
-						<input type="hidden" name="cmd" value="_xclick" />
-						<input type="hidden" name="business" value="{PAYPAL_EMAIL}" />
-						<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}" />
-						<input type="hidden" name="no_note" value="1" />
-						<input type="hidden" name="no_shipping" value="1" />
-						<input type="hidden" name="bn" value="PP-DonationsBF" />
-						<input type="hidden" name="tax" value="0" />
-						<input type="hidden" name="return" value="{RETURN_URL}" />
-						<select name="currency_code" id="currency_code">{CURRENCY_CODE}</select>
-					<!--
-					ISO 8859-1 character set overview
-					http://www.htmlhelp.com/reference/charset/
-					//-->
-					<select name="amount">
-						{AMOUNT_LIST}
-					</select>
-					<br />
-					<input type="submit" name="submit" value="{L_PAYPAL_DONATION}" class="button" style="border: 0px; margin: 20px; height: 38px; background-color: transparent;" />
-					<br />
-					</div>
-					</form>
+				</section>
+				<hr>
+				<!-- ENDIF -->
+
+				<div style="text-align: center;">
+					<input type="hidden" name="cmd" value="_xclick">
+					<input type="hidden" name="business" value="{PAYPAL_EMAIL}">
+					<input type="hidden" name="item_name" value="{PAYPAL_DEFAULT_ITEM}">
+					<input type="hidden" name="return" value="{RETURN_URL}">
+					<input type="hidden" name="cancel_return" value="{RETURN_URL}">
+					<!-- IF S_CURL --><input type="hidden" name="notify_url" value="{IPN_URL}"><!-- ENDIF -->
+					<input type="hidden" name="custom" value="{USER_ID}">
+					<input type="hidden" name="currency_code" value="{CURRENCY}">
+
+					<!-- <select name="currency_code" id="currency_code">{CURRENCY_CODE}</select> -->
+					<select name="amount">{AMOUNT_LIST}</select> {CURRENCY}<br>
+					<!-- IF not S_USER_LOGGED_IN and S_CURL -->
+					<p>{L_USER_NOT_LOGGED_IN}</p>
+					<!-- ENDIF -->
+					<input type="submit" name="submit" value="{L_PAYPAL_DONATION}" class="button" style="margin: 20px; height: 38px;">
+
 				</div>
-			</div>
+			</form>
 		</div>
-		<p style="text-align: center; padding: 24px;">{L_DONATION_INFO}</p>
 	</div>
 </div>
 
-<div class="copyright">{L_COPYRIGHT_PAYPALEXTENSION}<br />{L_PAYPALDESIGNANDINFO}</div>
 <!-- ENDIF -->
 
 <!-- INCLUDE overall_footer.html -->

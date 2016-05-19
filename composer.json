@@ -5,18 +5,14 @@
 	"homepage": "https://tas2580.net/downloads/phpbb-paypal/",
 	"version": "0.1.0",
 	"license": "GPL-2.0",
-	"authors": [{
+	"authors": [
+		{
 			"name": "tas2580",
 			"email": "mail@tas2580.net",
 			"homepage": "https://tas2580.net",
-			"role": "Lead Developer"
-		},
-		{
-			"name": "Talk19zehn",
-			"email": "forumongray@googlemail.com",
-			"homepage": "http://www.ongray-design.de/",
 			"role": "Developer"
-		}],
+		}
+	],
 	"require": {
 		"php": ">=5.3.3"
 	},
@@ -24,9 +20,9 @@
 		"phpbb/epv": "dev-master"
 	},
 	"extra": {
-		"display-name": "tas2580 Paypal",
+		"display-name": "Paypal donations",
 		"soft-require": {
-			"phpbb/phpbb": ">=3.1.4,<3.2.*@dev"
+			"phpbb/phpbb": ">=3.1.4,<3.2.0@dev"
 		},
 		"version-check": {
 			"host": "phpbb-versionscheck.cf",

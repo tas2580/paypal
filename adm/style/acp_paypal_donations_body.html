@@ -1,0 +1,36 @@
+<!-- INCLUDE overall_header.html -->
+<h1>{L_ACP_PAYPAL_DONATIONS}</h1>
+
+<!-- IF not S_CURL -->
+	<div class="errorbox">{L_NO_CURL}</div>
+<!-- ELSE -->
+
+	<!-- IF .donations -->
+	<table class="table1">
+		<col class="col1" />
+	<thead>
+	<tr>
+		<th>{L_USER}</th>
+		<th>{L_TIME}</th>
+		<th>{L_ITEM}</th>
+		<th>{L_ACP_AMOUNT}</th>
+		<th>{L_ACTION}</th>
+	</tr>
+	</thead>
+	<tbody>
+		<!-- BEGIN donations -->
+		<tr>
+			<td>{donations.USER}</td>
+			<td>{donations.TIME}</td>
+			<td>{donations.ITEM}</td>
+			<td><strong>{donations.AMOUNT}</strong></td>
+			<td class="actions"><a href="{donations.U_DELETE}" data-ajax="row_delete">{ICON_DELETE}</a></td>
+		</tr>
+		<!-- END donations -->
+	</tbody>
+	</table>
+	<!-- ELSE -->
+	<p>{L_NO_DONATIONS}</p>
+	<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- INCLUDE overall_footer.html -->

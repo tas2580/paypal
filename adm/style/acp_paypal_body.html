@@ -1,29 +1,41 @@
 <!-- INCLUDE overall_header.html -->
-<h1>{L_ACP_PAYPAL_TITLE}</h1>
-
+<h1>{L_ACP_PAYPAL_SETTINGS}</h1>
+<!-- IF ERROR -->
+	<div class="errorbox">
+		<h3>{L_ERROR}</h3>
+		<p>{ERROR}</p>
+	</div>
+<!-- ENDIF -->
 <form method="post" action="{U_ACTION}">
 <fieldset>
 	<legend>{L_ACP_SETTINGS}</legend>
 	<dl>
-		<dt><label for="paypal_email">{L_ACP_PAYPAL_EMAIL}</label><br /><span>{L_ACP_PAYPAL_EMAIL_EXPLAIN}</span></dt>
+		<dt><label for="paypal_email">{L_ACP_PAYPAL_EMAIL}{L_COLON}</label><br /><span>{L_ACP_PAYPAL_EMAIL_EXPLAIN}</span></dt>
 		<dd><input type="text" id="paypal_email" name="paypal_email" size="40" maxlength="255" value="{PAYPAL_EMAIL}" /></dd>
 	</dl>
 	<dl>
-		<dt><label for="paypal_default_item">{L_ACP_PAYPAL_DEFAULT_ITEM}</label><br /><span>{L_ACP_PAYPAL_DEFAULT_ITEM_EXPLAIN}</span></dt>
-		<dd><input type="text" id="paypal_default_item" name="paypal_default_item" size="40" maxlength="255" value="{PAYPAL_DEFAULT_ITEM}" /></dd>
+		<dt><label for="paypal_title">{L_ACP_PAYPAL_TITLE}{L_COLON}</label><br /><span>{L_ACP_PAYPAL_TITLE_EXPLAIN}</span></dt>
+		<dd><input type="text" id="paypal_title" name="paypal_title" size="40" maxlength="255" value="{PAYPAL_TITLE}" /></dd>
 	</dl>
 	<dl>
-		<dt><label for="paypal_description">{L_ACP_PAYPAL_DESCRIPTION}</label><br /><span>{L_ACP_PAYPAL_DESCRIPTION_EXPLAIN}</span></dt>
-		<dd><textarea id="paypal_description" rows="10" cols="50" name="paypal_description">{PAYPAL_DESCRIPTION}</textarea></dd>
+		<dt><label for="paypal_text">{L_ACP_PAYPAL_TEXT}{L_COLON}</label><br /><span>{L_ACP_PAYPAL_TEXT_EXPLAIN}</span></dt>
+		<dd><textarea id="paypal_text" rows="10" cols="50" name="paypal_text">{PAYPAL_TEXT}</textarea></dd>
 	</dl>
 	<dl>
-		<dt><label for="currency_code">{L_ACP_CURRENCY_CODE}</label><br /><span>{L_ACP_CURRENCY_CODE_EXPLAIN}</span></dt>
-		<dd><select id="currency_code" name="currency_code">{CURRENCY_CODE}</select></dd>
+		<dt><label for="paypal_currency">{L_ACP_CURRENCY_CODE}{L_COLON}</label><br /><span>{L_ACP_CURRENCY_CODE_EXPLAIN}</span></dt>
+		<dd><select id="paypal_currency" name="paypal_currency">{CURRENCY_CODE}</select></dd>
+	</dl>
+	<dl>
+		<dt><label for="paypal_sandbox">{L_ACP_PAYPAL_SANDBOX}{L_COLON}</label><br /><span>{L_ACP_PAYPAL_SANDBOX_EXPLAIN}</span></dt>
+		<dd>
+			<label><input type="radio" class="radio" id="paypal_sandbox" name="paypal_sandbox" value="1"<!-- IF PAYPAL_SANDBOX --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+			<label><input type="radio" class="radio" name="paypal_sandbox" value="0"<!-- IF not PAYPAL_SANDBOX --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</dd>
 	</dl>
 </fieldset>
 
 <fieldset>
-	<legend>{L_ACP_SUBMIT}</legend>
+	<legend>{L_ACP_SUBMIT_CHANGES}</legend>
 	<p class="submit-buttons">
 		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
 		<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
