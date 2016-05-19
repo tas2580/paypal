@@ -12,20 +12,24 @@ use Symfony\Component\HttpFoundation\Response;
 
 class main
 {
-	/* @var \phpbb\config\config */
+	/** @var \phpbb\config\config */
 	protected $config;
-	/* @var \phpbb\db\driver\driver */
+
+	/** @var \phpbb\db\driver\driver */
 	protected $db;
-	/* @var \phpbb\controller\helper */
+
+	/** @var \phpbb\controller\helper */
 	protected $helper;
-	/* @var \phpbb\template\template */
 
 	/** @var \phpbb\request\request */
 	protected $request;
 
+	/** @var \phpbb\template\template */
 	protected $template;
-	/* @var \phpbb\user */
+
+	/** @var \phpbb\user */
 	protected $user;
+
 	/**
 	* Constructor
 	*
@@ -66,8 +70,6 @@ class main
 			$amount_list .= '<option value="' . number_format($row['amount_value'] / 100, 2) . '">' . number_format($row['amount_value'] / 100, 2) . '</option>';
 		}
 
-
-
 		$sql = 'SELECT *
 			FROM ' . $this->table_items . '
 			ORDER BY item_name';
@@ -79,7 +81,6 @@ class main
 				'ITEM'		=> generate_text_for_display($row['item_text'], $row['bbcode_uid'], $row['bbcode_bitfield'], 7),
 				'ITEM_ID'	=> $row['item_id'],
 			));
-
 		}
 		$sql = 'SELECT *
 			FROM ' . $this->table_config;
@@ -142,7 +143,6 @@ class main
 			$req .= "&$key=$value";
 		}
 
-
 		$sql = 'SELECT paypal_sandbox
 			FROM ' . $this->table_config;
 		$result = $this->db->sql_query($sql);
@@ -190,7 +190,6 @@ class main
 			'Content-Type'		=> 'application/xml; charset=UTF-8',
 		);
 		return new Response('', '200', $headers);
-
 	}
 
 	private function currency_code_select($sel)

@@ -12,6 +12,9 @@ namespace tas2580\paypal\acp;
 class paypal_module
 {
 	var $u_action;
+	
+	/** @var \phpbb\user */
+	protected $user;
 
 	public function main($id, $mode)
 	{
@@ -21,14 +24,12 @@ class paypal_module
 		$this->phpbb_root_path = $phpbb_root_path;
 		$this->php_ext = $phpEx;
 
-
 		$user->add_lang_ext('tas2580/paypal', 'common');
 
 		$sql = 'SELECT *
 			FROM ' . $table_prefix . 'paypal_config';
 		$result = $db->sql_query($sql);
 		$paypal_config = $db->sql_fetchrow($result);
-
 
 		switch ($mode)
 		{
@@ -88,8 +89,6 @@ class paypal_module
 					{
 						$bbcode_options = 7;
 						generate_text_for_storage($data['paypal_text'], $bbcode_uid, $bbcode_bitfield, $bbcode_options, true, true, true);
-
-					//	generate_text_for_storage($paypal_text, $bbcode_uid, $bbcode_bitfield, '7', true, true, true);
 
 						$sql_data = array(
 							'paypal_email'				=> $data['paypal_email'],
@@ -166,7 +165,6 @@ class paypal_module
 				$this->page_title = $user->lang('ACP_PAYPAL_ITEMS');
 
 				$item_id = $request->variable('item_id', 0);
-
 				$action    = $request->variable('action', '');
 				switch ($action)
 				{
@@ -220,7 +218,6 @@ class paypal_module
 				}
 				switch ($action)
 				{
-
 					case 'add':
 					case 'edit':
 
@@ -279,8 +276,6 @@ class paypal_module
 									'ITEM_TEXT'		=> $data['item_text'],
 								));
 							}
-
-
 						}
 						break;
 
@@ -327,7 +322,6 @@ class paypal_module
 			case 'donations':
 				$this->tpl_name = 'acp_paypal_donations_body';
 				$this->page_title = $user->lang('ACP_PAYPAL_DONATIONS');
-
 
 				$action    = $request->variable('action', '');
 				if ($action == 'delete')
