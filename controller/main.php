@@ -126,7 +126,7 @@ class main
 		}
 		// read the post from PayPal system and add 'cmd'
 		$req = 'cmd=_notify-validate';
-		if(function_exists('get_magic_quotes_gpc'))
+		if (function_exists('get_magic_quotes_gpc'))
 		{
 			$get_magic_quotes_exists = true;
 		}

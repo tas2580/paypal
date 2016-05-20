@@ -12,7 +12,7 @@ namespace tas2580\paypal\acp;
 class paypal_module
 {
 	var $u_action;
-	
+
 	/** @var \phpbb\user */
 	protected $user;
 
